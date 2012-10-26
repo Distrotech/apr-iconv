@@ -1,5 +1,5 @@
 VPATH = @srcdir@
-INCLUDES = @API_INCLUDES@ @APR_INCLUDES@
+INCLUDES = -I../include -I../lib @API_INCLUDES@ @APR_INCLUDES@
 
 CHARSETS_ISO8859 = iso-8859-1.la iso-8859-2.la iso-8859-4.la iso-8859-5.la \
                    iso-8859-15.la

@@ -1,5 +1,5 @@
 VPATH = @srcdir@
-INCLUDES = @API_INCLUDES@ @APR_INCLUDES@
+INCLUDES = -I../include -I../lib @API_INCLUDES@ @APR_INCLUDES@
 
 MODULES_CORE=   _tbl_simple.la euc-jp.la euc-kr.la euc-tw.la gb2312.la \
                 iso-10646-ucs-2.la iso-10646-ucs-4.la \
