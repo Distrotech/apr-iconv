@@ -13,7 +13,7 @@ CLEAN_SUBDIRS = . lib ccs ces util
 
 TARGET_LIB = libapriconv-1.la
 
-DISTCLEAN_TARGETS = config.cache config.log config.status
+DISTCLEAN_TARGETS = config.cache config.log config.status build/rules.mk config.log config.status lib/apr_iconv_private.h lib/exports.c ./Makefile ./ces/Makefile ./util/Makefile ./ccs/Makefile ./lib/Makefile build/rules.mke */*la util/apriconv
 EXTRACLEAN_TARGETS = configure libtool aclocal.m4
 
 ### install location

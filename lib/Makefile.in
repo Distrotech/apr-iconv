@@ -7,7 +7,7 @@ prefix=@prefix@
 exec_prefix=@exec_prefix@
 libdir=@libdir@
 
-INCLUDES = -I../include @API_INCLUDES@ @APR_INCLUDES@
+INCLUDES = -I../include -I../lib @API_INCLUDES@ @APR_INCLUDES@
 
 TARGET_LIB = lib@API_LIBNAME@.la
 SUBDIRS = .
