@@ -9,7 +9,7 @@ TARGETS  = $(PROGRAMS)
 
 iconv_OBJECTS = iconv.lo iconv_stream.lo
 iconv_LDADD   = ../lib/lib@API_LIBNAME@.la
-APR_LIBS      = @APR_LIBS@
+APR_LIBS      = @APR_LIBS@ -L/lib64  -L/libx32 -L/lib
 
 apriconv:	$(iconv_OBJECTS) $(iconv_LDADD)
 	$(LINK) -o $@ $(iconv_OBJECTS) $(iconv_LDADD) $(LIBS) $(APR_LIBS)
