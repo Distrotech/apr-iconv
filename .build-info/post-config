@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sed -i -e "s/^EXTRA_CFLAGS.*/& -I.. -I..\/include -I..\/lib/" -e "s/build\/.*\//build\/${1}\//" \
+       -e "s/=\(\/usr\/\/build-1\)/=\/build\/arm\/\1/" build/rules.mk
+#sed -i -e "s/build\/.*\//build\/${1}\//" build/rules.mke
