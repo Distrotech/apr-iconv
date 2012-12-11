@@ -1,5 +1,15 @@
 #!/bin/bash
 
+CC="${MLHOST}-gcc${MLOPT} --sysroot="
+
 sed -i -e "s/^EXTRA_CFLAGS.*/& -I.. -I..\/include -I..\/lib/" -e "s/build\/.*\//build\/${1}\//" \
-       -e "s/=\(\/usr\/\/build-1\)/=\/build\/arm\/\1/" build/rules.mk
+       -e "s/=\(\/usr\/\/build-1\)/=\/build\/${1}\/\1/" -e "s/^CC.*/CC=${CC}\/build\/${1}/" \
+       -e "s/^\(LT_LDFLAGS.*= \)/\1--tag=CC/" \
+       -e "s/^apr_builddir=.*/apr_builddir=\/build\/${1}\/usr\/build-1/" \
+       -e "s/^apr_builders=.*/apr_builders=\/build\/${1}\/usr\/build-1/" \
+       -e "s/^top_builddir=.*/top_builddir=\/build\/${1}\/usr\/build-1/" \
+       -e "s/^LDFLAGS.*//" build/rules.mk
 #sed -i -e "s/build\/.*\//build\/${1}\//" build/rules.mke
+
+make -C lib clean
+make -C util clean

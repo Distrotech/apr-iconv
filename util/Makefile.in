@@ -1,6 +1,8 @@
 VPATH = @srcdir@
 INCLUDES = -I../include -I../lib @API_INCLUDES@ @APR_INCLUDES@
 
+CC = @CC@
+
 PROGRAMS = apriconv
 TARGETS  = $(PROGRAMS)
 
